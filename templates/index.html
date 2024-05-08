@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students Performance Predictor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #76b852, #8dc26f); /* Gradient background */
+        }
+
+        .container {
+            width: 300px;
+            margin: 50px auto;
+            background-color: rgba(255, 255, 255, 0.8); /* Transparent white background */
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #000; /* Black text */
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 5px;
+            color: #000; /* Black text */
+        }
+
+        select {
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Students Performance Predictor</h2>
+        <form action="/predict" method="POST">
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="0">Male</option>
+                <option value="1">Female</option>
+            </select>
+            
+            <label for="race_ethnicity">Race/Ethnicity:</label>
+            <select id="race_ethnicity" name="race_ethnicity" required>
+                <option value="0">Group A</option>
+                <option value="1">Group B</option>
+                <option value="2">Group C</option>
+                <option value="3">Group D</option>
+                <option value="4">Group E</option>
+            </select>
+
+            <label for="parental_level_of_education">Parental Level of Education:</label>
+            <select id="parental_level_of_education" name="parental_level_of_education" required>
+                <option value="0">Some high school</option>
+                <option value="1">High school</option>
+                <option value="2">Some college</option>
+                <option value="3">Associate's degree</option>
+                <option value="4">Bachelor's degree</option>
+                <option value="5">Master's degree</option>
+            </select>
+
+            <label for="lunch">Lunch Type:</label>
+            <select id="lunch" name="lunch" required>
+                <option value="0">Standard</option>
+                <option value="1">Free/reduced</option>
+            </select>
+
+            <label for="test_preparation_course">Test Preparation Course Completion:</label>
+            <select id="test_preparation_course" name="test_preparation_course" required>
+                <option value="0">None</option>
+                <option value="1">Completed</option>
+            </select>
+            
+            <p> <b>Students Average Score is: {{result}} </b></p>
+            <button type="result">Submit</button>
+        </form>
+    </div>
+
+</body>
+</html>
